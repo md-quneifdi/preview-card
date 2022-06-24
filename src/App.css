@@ -1,38 +1,164 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.preview-card {
   background-color: #282c34;
-  min-height: 100vh;
+  max-width: 1200px;
+  width: 80%;
+  height: 68vh;
+  margin: 12% auto;
+  color: #FFF;
+  display: flex;
+  border-radius: 6px;
+}
+
+.text-part {
+  padding: 7%;
+  font-size: 20px;
+  width: calc(100% / 2 - 20px);
+}
+
+.text-part h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.text-part h2 span {
+  color: #d106d8;
+}
+
+.text-part p {
+  font-family: 'Inter', sans-serif;
+  font-weight: normal;
+  font-size: 19px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.review-part {
+  display: flex;
+  padding: 3rem 0 0 0;
+}
+
+.review-part .review {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.review-part .review .first {
+  font-family: 'Lexend Deca', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.review-part .review .last {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: #ccc;
+  letter-spacing: 1px;
+  line-height: 2;
+}
+
+/* image part*/
+.image-part {
+  width: calc(100% / 2);
+  background-color: #fff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: relative;
+  opacity: 0.9;
+}
+
+.image-part img {
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  object-fit: fill;
+}
+
+.image-part::before {
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+  background-color: #e980fcaf;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+
+@media (max-width:470px) {
+  .preview-card {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    width: 90%;
+    margin: 20px auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .text-part {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .text-part h2 {
+    font-size: 30px;
+    padding: 25px;
+  }
+
+  .text-part p {
+    font-size: 1.1rem;
+    padding: 20px 50px;
+  }
+
+  .image-part {
+    width: 100%;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 0;
+    position: relative;
+
+  }
+
+  .image-part::before {
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .image-part img {
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .review-part {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .review {
+    padding-bottom: 30px;
+  }
+
+  .review-part .review .first {
+    font-size: 1.7rem;
+  }
+
+  .review-part .review .last {
+    font-size: 1rem;
   }
 }
